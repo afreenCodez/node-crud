@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+
+const port = process.env.PORT || 3000;
+
 app.use(express.json())
 const products = [
     {id:1,name:'Dell'},
@@ -59,6 +62,6 @@ app.delete('/api/products/:id',(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('server is up and running on port 3000');
 })
